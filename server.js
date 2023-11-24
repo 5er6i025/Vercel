@@ -3,7 +3,7 @@ const express= require('express');
 const app=express();
 app.use(express.json())
 require('dotenv').config();
-const port=3000;
+const port=process.env.PORT;
 
 const pool = new Pool({
     user: 'default',
@@ -17,7 +17,7 @@ const pool = new Pool({
 
 
 
-const API_KEY='source'
+const API_KEY=process.env.API_KEY
 
 
 const apikeyvalidation=(req,res,next)=>{
