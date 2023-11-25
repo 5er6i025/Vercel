@@ -5,6 +5,16 @@ app.use(express.json())
 require('dotenv').config();
 const port=process.env.PORT;
 
+
+/*EN https://vercel.com/dashboard/sergio-s-projects-f6a8a2d1/stores/postgres/store_Wrn0gILjK7zR8tuR/data
+SEGUIR ESTE FORMATO CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    lastname VARCHAR(50),
+    notes TEXT
+)
+*/
+
 const pool = new Pool({
     user: 'default',
     host: 'ep-orange-smoke-08960365.us-east-1.postgres.vercel-storage.com',
@@ -17,7 +27,7 @@ const pool = new Pool({
 
 
 
-const API_KEY=process.env.API_KEY
+const API_KEY=process.env.API_KEY;
 
 
 const apikeyvalidation=(req,res,next)=>{
